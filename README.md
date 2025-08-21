@@ -1,5 +1,4 @@
-# ML_with_Python
+# Python with OOP
+# Bro Code is awesome: https://www.youtube.com/watch?v=XKHEtdqhLK8
 
-# Day-01:
-1. Python Installation
-2. VS Code, Jupyter Notebook, Google Colab
+
