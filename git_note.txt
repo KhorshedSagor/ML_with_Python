@@ -1,6 +1,4 @@
 
-I’ll create a **comprehensive but easy-to-understand note on Git commands**, written in simple language so a 10th grader can follow.
-
 ---
 
 # 📒 Git Commands – A Simple Guide for Beginners
