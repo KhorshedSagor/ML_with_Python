@@ -323,5 +323,768 @@ print(f"price1 is: ${price1:}")
 print(f"price2 is: ${price2:}")
 print(f"price3 is: ${price3:}")
 
+# #while loop = perform some code WHILE some condition remains true
 
+# ---------------- EXAMPLE 1 ----------------
+
+name = input("Enter your name: ")
+
+while name == "":
+   print("You did not enter your name!")
+   name = input("Enter your name: ")
+
+print(f"Hello {name}")
+
+# ---------------- EXAMPLE 2 ----------------
+
+age = int(input("Enter your age: "))
+
+while age < 0:
+   print("Age can't be negative")
+   age = int(input("Enter your age: "))
+
+print(f"You are {age} years old")
+
+
+# ---------------- EXAMPLE 3 ----------------
+
+food = input("Enter a food you like (q to quit): ")
+
+while not food == "q":
+   print(f"You like {food}")
+   food = input("Enter another food you like (q to quit): ")
+
+print("bye")
+
+# ---------------- EXAMPLE 4 ----------------
+
+num = int(input("Enter a # between 1 - 10: "))
+
+while num < 1 or num > 10:
+    print(f"{num} is not valid")
+    num = int(input("Enter a # between 1 - 10: "))
+
+print(f"You picked the number {num}")
+
+
+# # Python compound interest calculator
+
+principle = 0
+rate = 0
+time = 0
+
+while True:
+    principle = float(input("Enter the principle amount: "))
+    if principle < 0:
+        print("Principle can't be less than zero")
+    else:
+        break
+
+while True:
+    rate = float(input("Enter the interest rate: "))
+    if rate < 0:
+        print("Interest rate can't be less than zero")
+    else:
+        break
+
+while True:
+    time = int(input("Enter the time in years: "))
+    if time < 0:
+        print("Time can't be less than zero")
+    else:
+        break
+
+total = principle * pow((1 + rate / 100), time)
+print(f"Balance after {time} year/s: ${total:.2f}")
+
+# # for loops = execute a block of code a fixed number of times.
+#                     You can iterate over a range, string, sequence, etc.
+
+# ---------------- EXAMPLE 1 ----------------
+
+for x in range(1, 11):
+   print(x)
+
+# ---------------- EXAMPLE 2 ----------------
+
+for x in reversed(range(1, 11)):
+   print(x)
+
+print("Happy New Year!")
+
+# ---------------- EXAMPLE 3 ----------------
+
+for x in range(1, 11, 2):
+   print(x)
+
+# ---------------- EXAMPLE 4 ----------------
+
+credit_card = "1234-5678-9012-3456"
+
+for x in credit_card:
+   print(x)
+
+# ---------------- CONTINUE ----------------
+
+for x in range(1, 21):
+   if x == 13:
+       continue
+   else:
+       print(x)
+
+# ---------------- BREAK ----------------
+
+for x in range(1, 21):
+   if x == 13:
+       break
+   else:
+       print(x)
+
+# # nested loop = A loop within another loop (outer, inner)
+#                          outer loop:
+#                              inner loop:
+
+rows = int(input("Enter the # of rows: "))
+columns = int(input("Enter the # of columns: "))
+symbol = input("Enter a symbol to use: ")
+
+for x in range(rows):
+   for y in range(columns):
+       print(symbol, end="")
+   print()
+
+# import time
+
+my_time = int(input("Enter the time in seconds: "))
+
+for x in range(my_time, 0, -1):
+    seconds = x % 60
+    minutes = int(x / 60) % 60
+    hours = int(x / 3600)
+    print(f"{hours:02}:{minutes:02}:{seconds:02}")
+    time.sleep(1)
+
+print("TIME'S UP!")
+
+
+# DRINKING GAME: Take a shot every time I say the word pineapple
+
+#   List  = [] ordered and changeable. Duplicates OK
+#   Set   = {} unordered and immutable, but Add/Remove OK. NO duplicates
+#   Tuple = () ordered and unchangeable. Duplicates OK. FASTER
+
+# # Shopping cart exercise
+
+foods = []
+prices = []
+total = 0
+
+while True:
+    food = input("Enter a food to buy (q to quit): ")
+    if food.lower() == "q":
+        break
+    else:
+        price = float(input(f"Enter the price of a {food}: $"))
+        foods.append(food)
+        prices.append(price)
+
+print("----- YOUR CART -----")
+
+for food in foods:
+    print(food, end=" ")
+
+for price in prices:
+    total += price
+
+print()
+print(f"Your total is: ${total}")
+
+# Here are a few different 2d collection combinations:
+
+# 2D list of lists
+num_pad = [[1, 2, 3],
+                      [4, 5, 6],
+                      [7, 8, 9],
+                      ["*", 0, "#"]]
+
+# 2D list of tuples
+num_pad = [(1, 2, 3),
+                      (4, 5, 6),
+                      (7, 8, 9),
+                      ("*", 0, "#")]
+
+# 2D list of sets
+num_pad = [{1, 2, 3},
+                      {4, 5, 6},
+                      {7, 8, 9},
+                      {"*", 0, "#"}]
+
+# 2D tuple of lists
+num_pad = ([1, 2, 3],
+                      [4, 5, 6],
+                      [7, 8, 9],
+                      ["*", 0, "#"])
+
+# 2D tuple of tuples
+num_pad = ((1, 2, 3),
+                      (4, 5, 6),
+                      (7, 8, 9),
+                      ("*", 0, "#"))
+
+# 2D tuple of sets
+num_pad = ({1, 2, 3},
+                      {4, 5, 6},
+                      {7, 8, 9},
+                      {"*", 0, "#"})
+
+# 2D set of lists (NOT VALID)
+num_pad = {[1, 2, 3],
+                      [4, 5, 6],
+                      [7, 8, 9],
+                      ["*", 0, "#"]}
+
+# 2D set of tuples
+num_pad = {(1, 2, 3),
+                      (4, 5, 6),
+                      (7, 8, 9),
+                      ("*", 0, "#")}
+
+# 2D set of sets (NOT VALID)
+num_pad = {{1, 2, 3},
+                      {4, 5, 6},
+                      {7, 8, 9},
+                      {"*", 0, "#"}}
+
+for row in num_pad:
+    for num in row:
+        print(num, end=" ")
+    print()
+
+# questions = ("How many elements are in the periodic table?: ",
+                       "Which animal lays the largest eggs?: ",
+                       "What is the most abundant gas in Earth's atmosphere?: ",
+                       "How many bones are in the human body?: ",
+                       "Which planet in the solar system is the hottest?: ")
+
+options = (("A. 116", "B. 117", "C. 118", "D. 119"),
+                   ("A. Whale", "B. Crocodile", "C. Elephant", "D. Ostrich"),
+                   ("A. Nitrogen", "B. Oxygen", "C. Carbon-Dioxide", "D. Hydrogen"),
+                   ("A. 206", "B. 207", "C. 208", "D. 209"),
+                   ("A. Mercury", "B. Venus", "C. Earth", "D. Mars"))
+
+answers = ("C", "D", "A", "A", "B")
+guesses = []
+score = 0
+question_num = 0
+
+for question in questions:
+    print("----------------------")
+    print(question)
+    for option in options[question_num]:
+        print(option)
+
+    guess = input("Enter (A, B, C, D): ").upper()
+    guesses.append(guess)
+    if guess == answers[question_num]:
+        score += 1
+        print("CORRECT!")
+    else:
+        print("INCORRECT!")
+        print(f"{answers[question_num]} is the correct answer")
+    question_num += 1
+
+print("----------------------")
+print("       RESULTS        ")
+print("----------------------")
+
+print("answers: ", end="")
+for answer in answers:
+    print(answer, end=" ")
+print()
+
+print("guesses: ", end="")
+for guess in guesses:
+    print(guess, end=" ")
+print()
+
+score = int(score / len(questions) * 100)
+print(f"Your score is: {score}%")
+
+# # dictionary =  a collection of {key:value} pairs
+#                        ordered and changeable. No duplicates
+
+capitals = {"USA": "Washington D.C.",
+                    "India": "New Delhi",
+                    "China": "Beijing",
+                    "Russia": "Moscow"}
+
+# print(dir(capitals))
+# print(help(capitals))
+# print(capitals.get("Japan"))
+
+# if capitals.get("Russia"):
+#    print("That capital exists")
+# else:
+#    print("That capital doesn't exist")
+
+# capitals.update({"Germany": "Berlin"})
+# capitals.update({"USA": "Detroit"})
+# capitals.pop("China")
+# capitals.popitem()
+# capitals.clear()
+
+# keys = capitals.keys()
+# for key in capitals.keys():
+#   print(key)
+
+# values = capitals.values()
+# for value in capitals.values():
+# print(value)
+
+# items = capitals.items()
+# for key, value in capitals.items():
+#    print(f"{key}: {value}")
+
+# # Concession stand program
+
+menu = {"pizza": 3.00,
+               "nachos": 4.50,
+               "popcorn": 6.00,
+               "fries": 2.50,
+               "chips": 1.00,
+               "pretzel": 3.50,
+               "soda": 3.00,
+               "lemonade": 4.25}
+cart = []
+total = 0
+
+print("--------- MENU ---------")
+for key, value in menu.items():
+    print(f"{key:10}: ${value:.2f}")
+print("------------------------")
+
+while True:
+    food = input("Select an item (q to quit): ").lower()
+    if food == "q":
+        break
+    elif menu.get(food) is not None:
+        cart.append(food)
+
+print("------ YOUR ORDER ------")
+for food in cart:
+    total += menu.get(food)
+    print(food, end=" ")
+
+print()
+print(f"Total is: ${total:.2f}")
+
+# import random
+
+low = 1
+high = 100
+options = ("Rock", "Paper", "Scissors")
+cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+
+# number = random.random()
+# number = random.randint(low, high)
+# choice = random.choice(options)
+# random.shuffle(cards)
+
+# -------------- NUMBER GUESSING GAME --------------
+
+import random
+
+low = 1
+high = 100
+guesses = 0
+number = random.randint(low, high)
+
+while True:
+   guess = int(input(f"Enter a number between ({low} - {high}): "))
+   guesses += 1
+
+   if guess < number:
+       print(f"{guess} is too low")
+   elif guess > number:
+       print(f"{guess} is too high")
+   else:
+       print(f"{guess} is correct!")
+       break
+
+print(f"This round took you {guesses} guesses")
+
+# # Python number guessing game
+import random
+
+lowest_num = 1
+highest_num = 100
+answer = random.randint(lowest_num, highest_num)
+guesses = 0
+is_running = True
+
+print("Python Number Guessing Game")
+print(f"Select a number between {lowest_num} and {highest_num}")
+
+while is_running:
+
+    guess = input("Enter your guess: ")
+
+    if guess.isdigit():
+        guess = int(guess)
+        guesses += 1
+
+        if guess < lowest_num or guess > highest_num:
+            print("That number is out of range")
+            print(f"Please select a number between {lowest_num} and {highest_num}")
+        elif guess < answer:
+            print("Too low! Try again!")
+        elif guess > answer:
+            print("Too high! Try again!")
+        else:
+            print(f"CORRECT! The answer was {answer}")
+            print(f"Number of guesses: {guesses}")
+            is_running = False
+    else:
+        print("Invalid guess")
+        print(f"Please select a number between {lowest_num} and {highest_num}")
+
+# import random
+
+options = ("rock", "paper", "scissors")
+running = True
+
+while running:
+
+    player = None
+    computer = random.choice(options)
+
+    while player not in options:
+        player = input("Enter a choice (rock, paper, scissors): ")
+
+    print(f"Player: {player}")
+    print(f"Computer: {computer}")
+
+    if player == computer:
+        print("It's a tie!")
+    elif player == "rock" and computer == "scissors":
+        print("You win!")
+    elif player == "paper" and computer == "rock":
+        print("You win!")
+    elif player == "scissors" and computer == "paper":
+        print("You win!")
+    else:
+        print("You lose!")
+
+    if not input("Play again? (y/n): ").lower() == "y":
+        running = False
+
+print("Thanks for playing!")
+
+# # Here are the Unicode characters I use for drawing the dice.
+# Youtube has strange spacing, so the ASCII art looks warped in the description. 
+# It should still work if you copy and paste it into PyCharm.
+
+# ● ┌ ─ ┐ │ └ ┘
+
+import random
+
+dice_art = {
+    1: ("┌─────────┐",
+        "│         │",
+        "│    ●    │",
+        "│         │",
+        "└─────────┘"),
+    2: ("┌─────────┐",
+        "│  ●      │",
+        "│         │",
+        "│      ●  │",
+        "└─────────┘"),
+    3: ("┌─────────┐",
+        "│  ●      │",
+        "│    ●    │",
+        "│      ●  │",
+        "└─────────┘"),
+    4: ("┌─────────┐",
+        "│  ●   ●  │",
+        "│         │",
+        "│  ●   ●  │",
+        "└─────────┘"),
+    5: ("┌─────────┐",
+        "│  ●   ●  │",
+        "│    ●    │",
+        "│  ●   ●  │",
+        "└─────────┘"),
+    6: ("┌─────────┐",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "└─────────┘")
+}
+
+dice = []
+total = 0
+num_of_dice = int(input("How many dice?: "))
+
+for die in range(num_of_dice):
+    dice.append(random.randint(1, 6))
+
+# PRINT VERTICALLY
+# for die in range(num_of_dice):
+#    for line in dice_art.get(dice[die]):
+#        print(line)
+
+# PRINT HORIZONTALLY
+for line in range(5):
+    for die in dice:
+        print(dice_art.get(die)[line], end="")
+    print()
+
+for die in dice:
+    total += die
+print(f"total: {total}")
+
+# import random
+import string
+
+chars = " " + string.punctuation + string.digits + string.ascii_letters
+chars = list(chars)
+key = chars.copy()
+
+random.shuffle(key)
+
+#ENCRYPT
+plain_text = input("Enter a message to encrypt: ")
+cipher_text = ""
+
+for letter in plain_text:
+    index = chars.index(letter)
+    cipher_text += key[index]
+
+print(f"original message : {plain_text}")
+print(f"encrypted message: {cipher_text}")
+
+#DECRYPT
+cipher_text = input("Enter a message to encrypt: ")
+plain_text = ""
+
+for letter in cipher_text:
+    index = key.index(letter)
+    plain_text += chars[index]
+
+print(f"encrypted message: {cipher_text}")
+print(f"original message : {plain_text}")
+
+# # ----------  EXAMPLE 1  ---------- 
+def display_invoice(username, amount, due_date):
+   print(f"Hello {username}")
+   print(f"Your bill of ${amount:.2f} is due: {due_date}")
+
+# display_invoice("BroCode", 42.50, "01/01")
+# display_invoice("JoeSchmo", 100.01, "01/02")
+
+# ----------  EXAMPLE 2  ---------- 
+def create_name(first, last):
+    first = first.capitalize()
+    last = last.capitalize()
+    return first + " " + last
+
+full_name = create_name("spongebob", "squarepants")
+print(full_name)
+
+# # ----- EXAMPLE -----
+def net_price(list_price, discount=0, tax=0.05):
+   return list_price * (1 - discount) * (1 - tax)
+
+# print(net_price(500))
+# print(net_price(500, 0.1))
+# print(net_price(500, 0.1, 0))
+
+# ----- EXERCISE -----
+import time
+
+def count(end, start=0): 
+    for x in range(start, end+1):
+        print(x)
+        time.sleep(1)
+    print("DONE!")
+
+# count(10)
+# count(30, 15)
+
+# # keyword arguments = arguments prefixed with the names of parameters
+#                                        order of the arguments doesn’t matter
+#                                        helps with readability
+
+# ----- EXAMPLE 1 -----
+def hello(greeting, title, first, last):
+    print(f"{greeting} {title}{first} {last}")
+
+hello("Hello", title="Mr.", last="John", first="James")
+
+# ----- EXAMPLE 2 -----
+for number in range(1, 11):
+    print(number, end=" ")
+
+print("1", "2", "3", "4", "5", sep="-")
+
+# ----- EXERCISE -----
+def get_phone(country, area, first, last):
+    return f"{country}-{area}-{first}-{last}"
+
+phone_num = get_phone(country=1, area=123, first=456, last=7890)
+print(phone_num)
+
+# # ----- *ARGS Example 1 -----
+
+def add(*nums):
+   total = 0
+   for num in nums:
+       total += num
+   return total
+
+print(add(1, 2, 3, 4))
+
+# ----- *ARGS Example 2 -----
+
+def display_name(*args):
+   print(f"Hello", end=" ")
+   for arg in args:
+       print(arg, end=" ")
+
+display_name("Dr.", "Spongebob", "Harold", "Squarepants", "III")
+
+# ----- **KWARGS -----
+def print_address(**kwargs):
+    for value in kwargs.values():
+        print(value, end=" ")
+
+print_address(street="123 Fake St.",
+              pobox="P.O Box 777",
+              city="Detroit",
+              state="MI",
+              zip="54321")
+
+# ----- EXERCISE -----
+def shipping_label(*args, **kwargs):
+    for arg in args:
+        print(arg, end=" ")
+    print()
+
+    if "apt" in kwargs:
+        print(f"{kwargs.get('street')} {kwargs.get('apt')}")
+    elif "pobox" in kwargs:
+        print(f"{kwargs.get('street')}")
+        print(f"{kwargs.get('pobox')}")
+    else:
+        print(f"{kwargs.get('street')}")
+
+    print(f"{kwargs.get('city')}, {kwargs.get('state')} {kwargs.get('zip')}")
+
+shipping_label("Dr.", "Spongebob", "Squarepants",
+               street="123 Fake St.",
+               pobox="PO box #1001",
+               city="Detroit",
+               state="MI",
+               zip="54321")
+
+# Iterables = An object/collection that can return its elements one at a time,
+#                    allowing it to be iterated over in a loop
+
+my_list = [1, 2, 3, 4, 5]
+my_tuple = (1, 2, 3, 4, 5)
+my_set = {"apple", "orange", "banana", "coconut"}
+my_name = "Bro Code"
+my_dictionary = {'A': 1, 'B': 2, 'C': 3}
+
+for item in my_list:
+    print(item)
+
+# DICTIONARIES
+for key in my_dictionary:
+    print(key)
+
+for value in my_dictionary.values():
+    print(value)
+
+for key, value in my_dictionary.items():
+    print(f"{key} = {value}")
+
+# # Membership operators = used to test whether a value or variable is found in a sequence
+#                                             (string, list, tuple, set, or dictionary)
+#                                             1. in
+#                                             2. not in
+
+# --------------------
+# EXAMPLE 1
+# --------------------
+word = "APPLE"
+
+letter = input("Guess a letter in the secret word: ")
+
+if letter in word:
+   print(f"There is a {letter}")
+else:
+   print(f"{letter} was not found")
+
+# --------------------
+# EXAMPLE 2
+# --------------------
+students = {"Spongebob", "Patrick", "Sandy"}
+
+student = input("Enter the name of a student: ")
+
+if student in students:
+   print(f"{student} is in this class")
+else:
+   print(f"{student} is NOT in this class")
+
+# --------------------
+# EXAMPLE 3
+# --------------------
+grades = {
+   "Sandy": 'A',
+   "Squidward": 'B',
+   "Spongebob": 'C',
+   "Patrick": 'D'
+}
+
+student = input("Enter the name of a student: ")
+
+if student in grades:
+   print(f"{student}'s grade is {grades[student]}.")
+else:
+   print(f"{student} is not in the dictionary")
+
+# --------------------
+# EXAMPLE 4
+# --------------------
+email = "BroCode@gmail.com"
+
+if "@" in email and "." in email:
+    print("Valid email")
+else:
+    print("Invalid email")
+
+# # List comprehension = A concise way to create lists in Python
+#                                        Compact and easier to read than traditional loops
+#                                        [expression for value in iterable if condition]
+
+doubles = [x * 2 for x in range(1, 11)]
+triples = [y * 3 for y in range(1, 11)]
+squares = [z * z for z in range(1, 11)]
+
+fruits = ["apple", "orange", "banana", "coconut"]
+uppercase_words = [fruit.upper() for fruit in fruits]
+fruit_chars = [fruit[0] for fruit in fruits]
+
+numbers = [1, -2, 3, -4, 5, -6, 8, -7]
+positive_numbers = [x for x in numbers if x >= 0]
+negative_numbers = [x for x in numbers if x < 0]
+even_numbers = [x for x in numbers if x % 2 == 0]
+odd_numbers = [x for x in numbers if x % 2 == 1]
+
+grades = [85, 42, 79, 90, 56, 61, 30]
+passing_grades = [grade for grade in grades if grade >= 60]
+
+# 
 
