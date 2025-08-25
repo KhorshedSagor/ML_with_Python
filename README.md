@@ -21,5 +21,6 @@ Bro Code is awesome: https://www.youtube.com/watch?v=XKHEtdqhLK8
 17. Exception
 18. Iterables & Membership
 19. List Comprehensions
+20. File Detection & Handling
 
 
