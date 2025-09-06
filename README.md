@@ -1,8 +1,10 @@
 # Python Basics & Python OOP
-Bro Code is awesome: https://www.youtube.com/watch?v=XKHEtdqhLK8
+## Bro Code is awesome: 
+https://www.youtube.com/watch?v=XKHEtdqhLK8
 
 # DSA Python
-Awesome resource with interview prep: https://www.youtube.com/playlist?list=PLhR2IpV1b2FwWwviBHRrR118YAaSlyhTU
+## Awesome resource with interview prep: 
+https://www.youtube.com/playlist?list=PLhR2IpV1b2FwWwviBHRrR118YAaSlyhTU
 
 # Python File Handling
 1. File Handling: https://www.youtube.com/playlist?list=PLI4OVrCFuY55ZrOMkfYNt7CQGEkskxJlj
